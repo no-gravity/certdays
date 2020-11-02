@@ -6,7 +6,7 @@ tail -n 1                                                   | \
 cut -d= -f2`
 certsec=`date +%s -d "$certdate"`
 nowsec=`date +%s`
-days=`echo "($certsec-$nowsec) / ( 60*60*24 )" | bc`
+days=`echo "$((($certsec-$nowsec)/(60*60*24)))"`
 
 echo "$1: $days"
 
